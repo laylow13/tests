@@ -13,7 +13,7 @@ async def run():
 
     #drone = System(mavsdk_server_address="localhost", port=50043)
     drone = System()
-    await drone.connect(system_address="udp://:14550")
+    await drone.connect(system_address="udp://:14544")
 
     print("Waiting for drone to connect...")
     async for state in drone.core.connection_state():
@@ -37,7 +37,7 @@ async def run():
 
     print("-- Arming")
     await drone.action.arm()
-    await asyncio.sleep(7)
+    await asyncio.sleep(8)
 
 
 if __name__ == "__main__":
